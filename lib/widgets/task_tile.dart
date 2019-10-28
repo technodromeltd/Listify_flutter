@@ -28,7 +28,7 @@ class TaskTile extends StatelessWidget {
               decoration: isChecked ? TextDecoration.lineThrough : null),
         ),
         trailing: Checkbox(
-            activeColor: Colors.lightBlueAccent,
+            activeColor: Colors.green,
             value: isChecked,
             onChanged: (val) {
               Provider.of<Data>(context).toggleCheckbox(taskIndex);

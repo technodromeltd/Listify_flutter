@@ -27,6 +27,12 @@ class Data extends ChangeNotifier {
     notifyListeners();
   }
 
+  void removeAllTasks() {
+    print("Clearing list");
+    _tasks = [];
+    notifyListeners();
+  }
+
   void toggleCheckbox(int index) {
     _tasks[index].isDone = !_tasks[index].isDone;
 

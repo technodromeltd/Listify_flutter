@@ -9,18 +9,7 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
-//      floatingActionButton: FloatingActionButton(
-//        backgroundColor: Colors.lightBlueAccent,
-//        onPressed: () {
-//          showModalBottomSheet(
-//              context: context, builder: (context) => AddTaskScreen(() {}));
-//        },
-//        child: Icon(
-//          Icons.add,
-//          size: 30.0,
-//        ),
-//      ),
+      backgroundColor: Colors.greenAccent,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -30,24 +19,33 @@ class TasksScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 30.0,
-                  child: Icon(
-                    Icons.list,
-                    size: 30.0,
-                    color: Colors.lightBlueAccent,
-                  ),
+                Row(
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 20.0,
+                      child: Icon(
+                        Icons.list,
+                        size: 20.0,
+                        color: Colors.greenAccent,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                      width: 10.0,
+                    ),
+                    Text(
+                      'Listify',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 50.0),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 10.0,
-                ),
-                Text(
-                  'Listify',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0),
+                  width: 10.0,
                 ),
                 Text(
                   '${Provider.of<Data>(context).taskCount} tasks',
@@ -71,6 +69,21 @@ class TasksScreen extends StatelessWidget {
                       topRight: Radius.circular(20.0),
                       topLeft: Radius.circular(20.0))),
               child: TasksList(),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Provider.of<Data>(context).removeAllTasks();
+            },
+            child: Container(
+              height: 40.0,
+              color: Colors.redAccent,
+              child: Center(
+                  child: Text(
+                "Clear list",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              )),
             ),
           )
         ],
