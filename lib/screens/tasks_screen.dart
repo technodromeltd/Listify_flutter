@@ -77,7 +77,7 @@ class TasksScreen extends StatelessWidget {
             },
             child: Container(
               height: 40.0,
-              color: Colors.redAccent,
+              color: Colors.redAccent.shade100,
               child: Center(
                   child: Text(
                 "Clear list",
