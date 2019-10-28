@@ -5,4 +5,4 @@ https://github.com/londonappbrewery/Flutter-Course-Resources
 
 
 
-![alt text](https://github.com/technodromeltd/Listify_flutter/edit/master/screenshot1.jpg)
+![screenshot1](https://github.com/technodromeltd/Listify_flutter/blob/master/listify-screenshot1.jpg)
